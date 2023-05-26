@@ -4,6 +4,7 @@ import {abis} from '@my-app/contracts';
 import {ERC20, usecontractFunction, useEthers, useTokenAllowance, useTokenBalance} from '@usedapp/core';
 import {ethers} from 'ethers';
 import {parseUnits} from 'ethers/lib/utils';
+import {RiArrowUpDownFill} from 'react-icons/ri'
 
 import styles from '../styles'
 
@@ -14,22 +15,24 @@ const Exchange = ({pools}) => {
   return (
     <div className={styles.exchangeWindow}>
 
-      <div className='flex flex-col mb-12'>
-      <p>From</p>
-      <div className='flex mx-auto my-auto w-full h-[100px] rounded-xl bg-neutral-900'>
-        <AmountIn
+      <div className='flex flex-col mt-12'>
+      <p className='text-neutral-400'>From</p>
+      <div className={styles.exchangeInput}>
+
+      <AmountIn
 
         />
+
       </div>
       <Balance />
       </div>
 
-      <img alt='arrows' className='mx-auto'/>
+      <RiArrowUpDownFill alt='arrows' className='mx-auto text-white h-6 w-6'/>
 
       <div className='flex flex-col'>
-      <p>To</p>
-      <div className='flex mx-auto my-auto w-full h-full rounded-xl bg-neutral-900'>
-        <AmountIn
+      <p className='text-neutral-400'>To</p>
+      <div className={styles.exchangeInput}>
+        <AmountOut
 
         />
         

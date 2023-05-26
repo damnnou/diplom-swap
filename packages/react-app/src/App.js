@@ -24,9 +24,9 @@ const App = () => {
             <FcAreaChart className='w-14 h-14 mr-24' />
             
             <div className="flex my-auto">
-              <p className='mx-8 text-neutral-400 text-white cursor-pointer uppercase'>Swap tokens</p>
-              <p className='mx-8 text-neutral-400 hover:text-white cursor-pointer uppercase'>LIQUIDITY POOLS</p>
-              <p className='mx-8 text-neutral-400 hover:text-white cursor-pointer uppercase'>How it works</p>
+              <p className='mx-8 text-neutral-400 text-white cursor-pointer text-lg'>Swap tokens</p>
+              <p className='mx-8 text-neutral-400 hover:text-white cursor-pointer text-lg'>Liquidity Pools</p>
+              <p className='mx-8 text-neutral-400 hover:text-white cursor-pointer text-lg'>How it works</p>
             </div>
           </div>
 
