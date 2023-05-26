@@ -8,10 +8,8 @@ import { getFactoryInfo, getRouterInfo } from '../utils';
 export const loadPools = async (providerUrl) => {
     const provider = new Web3.providers.HttpProvider(providerUrl);
     const web3 = new Web3(provider);
-
     const routerInfo = await getRouterInfo(ROUTER_ADDRESS, web3);
     const factoryInfo = await getFactoryInfo(routerInfo.factory, web3);
-
     return factoryInfo.pairsInfo;
 }
 
@@ -22,7 +20,7 @@ export const usePools = () => {
 
     useEffect(() => {
         loadPools(readOnlyUrls[readOnlyChainId])
-        .then(() => {
+        .then((pools) => {
             setPools(pools);
             setLoading(false);
         })

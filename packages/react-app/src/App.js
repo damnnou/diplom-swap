@@ -11,17 +11,18 @@ const App = () => {
   const [loading, pools] = usePools();
   const poolsLoading = false;
 
+
   return (
     <div className={styles.app}>
-      <div className="flex bg-green-400 h-screen w-fit rounded-l-2xl">
-        <img className="my-auto w-auto h-[50%]" width={100} src={leftSideBackground} />
+      <div className="flex bg-green-400 h-screen w-fit rounded-l-2xl fixed z-30">
+        <img className="z-30 my-auto w-auto h-[50%]" width={100} src={leftSideBackground} />
       </div>
       <div className={styles.mainContainer}>
 
         <header className={styles.containerHeader}>
 
           <div className={styles.leftSideHeader}>
-            <FcAreaChart className='w-14 h-14 mr-24' />
+           <a href="http://localhost:3000"><FcAreaChart className='cursor-pointer w-14 h-14 mr-24' /></a>
             
             <div className="flex my-auto">
               <p className='mx-8 text-neutral-400 text-white cursor-pointer text-lg'>Swap tokens</p>
