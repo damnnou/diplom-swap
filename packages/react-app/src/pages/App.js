@@ -1,13 +1,13 @@
 import React from "react"
 import { useState, useEffect } from "react";
 import { useEthers } from "@usedapp/core";
-import {usePools} from './hooks'
-import styles from './styles'
-import leftSideBackground from './assets/leftSideBackground.png'
+import {usePools} from '../hooks'
+import styles from '../styles'
+import leftSideBackground from '../assets/leftSideBackground.png'
 import {FcAreaChart} from 'react-icons/fc'
-import { Exchange, Loader, WalletButton } from "./components";
+import { Exchange, Loader, WalletButton } from "../components";
 
-const App = () => {
+const App = ({setPage}) => {
   const { account } = useEthers();
   const [loading, pools] = usePools();
   const poolsLoading = false;
@@ -31,7 +31,7 @@ const App = () => {
   return (
     <div className={styles.app}>
       <div className="flex bg-green-400 h-screen w-fit rounded-l-2xl fixed z-30">
-        <img className="z-30 my-auto w-auto h-[50%]" width={100} src={leftSideBackground} />
+        <img className="z-30 my-auto w-auto h-[62%]" src={leftSideBackground} />
       </div>
       <div className={styles.mainContainer}>
 
@@ -40,12 +40,12 @@ const App = () => {
           }`}>
 
           <div className={styles.leftSideHeader}>
-           <a href="http://localhost:3000"><FcAreaChart className='cursor-pointer w-14 h-14 mr-24' /></a>
+           <FcAreaChart onClick={() => setPage('App')} className='cursor-pointer w-12 h-12 mr-6' />
             
             <div className="flex my-auto">  
-              <p className='mx-8 text-neutral-400 text-white cursor-pointer text-lg'>Swap tokens</p>
-              <p className='mx-8 text-neutral-400 hover:text-white cursor-pointer text-lg'>Liquidity Pools</p>
-              <p className='mx-8 text-neutral-400 hover:text-white cursor-pointer text-lg'>How it works</p>
+              <p onClick={() => setPage('App')} className='mx-8 text-neutral-400 text-white font-semibold cursor-pointer'>Swap tokens</p>
+              <p onClick={() => setPage('Transactions')} className='mx-8 text-neutral-400 hover:text-white cursor-pointer'>Liquidity Pools</p>
+              <p className='mx-8 text-neutral-400 hover:text-white cursor-pointer'>How it works</p>
             </div>
           </div>
 

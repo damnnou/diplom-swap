@@ -7,6 +7,7 @@ import Web3 from 'web3'
 import { abis } from '@my-app/contracts'
 
 const ChooseToken = ({
+  searchValue,
     account,
     onSelect,
     index,
@@ -32,7 +33,7 @@ const ChooseToken = ({
           };
       
           getSymbol();
-        }, []);
+        }, [searchValue]);
 
   return (
     <div  

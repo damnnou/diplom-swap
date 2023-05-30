@@ -6,12 +6,14 @@ import {RiArrowLeftLine as Arrow} from 'react-icons/ri'
 import ethereumLogo from '../assets/wrapped-ether.png'
 import Balance from './Balance'
 import ChooseToken from './ChooseToken'
+import {RiSearchLine} from 'react-icons/ri'
 
 
 const AmountIn = ({account, value, onChange, currencyValue, onSelect, currencies, isSwapping, tokenBalance}) => {
 
   const [showList, setShowList] = useState(false);
   const [activeCurrency, setActiveCurrency] = useState('Select');
+  const [searchValue, setSearchValue] = React.useState('');
 
   useEffect(() => {
     if(Object.keys(currencies).includes(currencyValue)){
@@ -38,13 +40,19 @@ const AmountIn = ({account, value, onChange, currencyValue, onSelect, currencies
           <div className='flex flex-col '>
             <p className='mb-6 font-semibold text-2xl'>SELECT AN ASSET</p>
 
-            <input placeholder='Asset name, unit name or asset id' className='outline-none bg-[#1f1f1f]  py-4 px-16 rounded-xl focus:bg-neutral-700 mb-6' />
+            <input
+            value={searchValue}
+            onChange={input => setSearchValue(input.target.value)}
+            placeholder='Asset name, unit name or asset id' 
+            className='relative outline-none bg-[#1f1f1f]  py-4 px-12 rounded-xl focus:bg-neutral-700 mb-6' />
+            <RiSearchLine className='w-5 h-5 text-neutral-400 absolute 2xl:left-[400px] xl:left-[272px] sm:left-[62px] top-[173px]' />
 
             <div className='rounded-lg border border-neutral-600 bg-neutral-700 hover:bg-neutral-600 mb-24'>
 
-            {Object.entries(currencies).map(([token, tokenName], index) => 
+            {Object.entries(currencies).filter(([token,tokenName], index) => tokenName.toLowerCase().includes(searchValue.toLowerCase())).map(([token, tokenName], index) => 
             
             <ChooseToken
+            searchValue = {searchValue}
             account = {account}
             onSelect = {onSelect}
             setActiveCurrency={setActiveCurrency}
@@ -52,8 +60,6 @@ const AmountIn = ({account, value, onChange, currencyValue, onSelect, currencies
             index = {index}
             token = {token} 
             tokenName = {tokenName} />
-            
-
               )
             }
             </div>
