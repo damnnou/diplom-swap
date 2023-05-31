@@ -23,7 +23,7 @@ function Main() {
     <React.StrictMode>
       <DAppProvider config={DAPP_CONFIG}>
         {page === "App" && <App setPage={setPage} />}
-        {page === "Transactions" && <Transactions setPage={setPage} />}
+        {page === "Transactions" && <Transactions page={page} setPage={setPage} />}
         {/* {page === "About" &&} */}
       </DAppProvider>
     </React.StrictMode>

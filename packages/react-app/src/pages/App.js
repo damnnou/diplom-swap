@@ -44,7 +44,7 @@ const App = ({setPage}) => {
             
             <div className="flex my-auto">  
               <p onClick={() => setPage('App')} className='mx-8 text-neutral-400 text-white font-semibold cursor-pointer'>Swap tokens</p>
-              <p onClick={() => setPage('Transactions')} className='mx-8 text-neutral-400 hover:text-white cursor-pointer'>Liquidity Pools</p>
+              <p onClick={() => setPage('Transactions')} className='mx-8 text-neutral-400 hover:text-white cursor-pointer'>Transactions</p>
               <p className='mx-8 text-neutral-400 hover:text-white cursor-pointer'>How it works</p>
             </div>
           </div>

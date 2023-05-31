@@ -54,13 +54,14 @@ const AmountOut = ({
             onChange={input => setSearchValue(input.target.value)}
             placeholder='Asset name, unit name or asset id' 
             className='relative outline-none bg-[#1f1f1f]  py-4 px-12 rounded-xl focus:bg-neutral-700 mb-6' />
-            <RiSearchLine className='w-5 h-5 text-neutral-400 absolute 2xl:left-[400px] xl:left-[272px] sm:left-[62px] top-[173px]' />
+            <RiSearchLine className='w-5 h-5 text-neutral-400 absolute xl:left-[272px] 2xl:left-[400px] lg:left-[205px] md:left-[160px] sm:left-[62px] top-[173px]' />
 
             <div className='rounded-lg border border-neutral-600 bg-neutral-700 hover:bg-neutral-600 mb-24'>
 
             {Object.entries(currencies).filter(([token,tokenName], index) => tokenName.toLowerCase().includes(searchValue.toLowerCase())).map(([token, tokenName], index) => 
             
             <ChooseToken
+            key={index}
             searchValue = {searchValue}
             account = {account}
             onSelect = {onSelect}

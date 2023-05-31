@@ -24,7 +24,7 @@ const ChooseToken = ({
 
     useEffect(() => {
         const getSymbol = async () => {
-            const web3 = new Web3('https://eth-goerli.g.alchemy.com/v2/VFVeT3J9yUX9SZs4FStpZUZSJyIUolda');
+            const web3 = new Web3('https://eth-goerli.g.alchemy.com/v2/HMHzefwZIJeG4VKqKaD7AjCltzcan0Zn');
             const contractAddress = token; // Адрес контракта токена
             const contractABI = abis.erc20.abi; // ABI контракта токена
             const contract = new web3.eth.Contract(contractABI, contractAddress);

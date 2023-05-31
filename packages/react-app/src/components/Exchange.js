@@ -167,19 +167,36 @@ const Exchange = ({pools}) => {
   return (
     <div className={styles.exchangeWindow}>
 
-      <div className='absolute flex flex-col top-[34%] right-[72%]'>
+      <div className='absolute flex flex-col xl:visible lg:right-[78%] lg:top-[42%] xl:top-[34%] xl:right-[75%] 2xl:right-[72%] lg:visible sm:invisible md:invisible'>
         <p className='text-neutral-300 pb-6 pl-10'>Trending swaps</p>
         <button 
         onClick={() => {
-          onFromTokenChange(tokenAddress.WETH)
-          onToTokenChange(tokenAddress.SHIBA)
+          onFromTokenChange(tokenAddress.MGOTU)
+          onToTokenChange(tokenAddress.RUB)
         }}
-        className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit border border-neutral-700 rounded-lg'>
-        WETH to SHIBA</button>
-        <button
-        className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit border border-neutral-700 rounded-lg '>MGOTU TO WETH</button>
-        <button className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit border border-neutral-700 rounded-lg '>RUBS to USDS</button>
-        <button className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit border border-neutral-700 rounded-lg '>EURS to JPYS</button>
+        className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit focus:bg-neutral-600 border border-neutral-700 rounded-lg'>
+        MGOTU to RUB</button>
+        <button 
+        onClick={() => {
+          onFromTokenChange(tokenAddress.RUB)
+          onToTokenChange(tokenAddress.USD)
+        }}
+        className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit focus:bg-neutral-600 border border-neutral-700 rounded-lg'>
+        RUB to USD</button>
+        <button 
+        onClick={() => {
+          onFromTokenChange(tokenAddress.DBDZ)
+          onToTokenChange(tokenAddress.WETH)
+        }}
+        className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit focus:bg-neutral-600 border border-neutral-700 rounded-lg'>
+        DBDZ to WETH</button>
+        <button 
+        onClick={() => {
+          onFromTokenChange(tokenAddress.WETH)
+          onToTokenChange(tokenAddress.MEOW)
+        }}
+        className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit focus:bg-neutral-600 border border-neutral-700 rounded-lg'>
+        WETH to MEOW</button>
       </div>
 
     
