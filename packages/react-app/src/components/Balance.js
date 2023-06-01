@@ -7,9 +7,9 @@ const Balance = ({tokenBalance}) => {
   const roundedBalance = Number(balance).toFixed(8);
 
   return (
-    <div className='flex  overflow-hidden'>{tokenBalance && (
-      <p className=''>Avaliable: {roundedBalance}</p>
-    )}</div>
+    <>
+      Avaliable: {roundedBalance}
+      </>
   )
 }
 

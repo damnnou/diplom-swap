@@ -16,7 +16,7 @@ const Transactions = ({page, setPage}) => {
   useEffect(() => {
     const fetchTransactionData = async () => {
       // Выполнение запроса к базе данных Sanity
-      const query = `*[_type == "transactions"]`;
+      const query = `*[_type == "transactions"] | order(timestamp desc)`;
       const result = await client.fetch(query);
 
       // Сохранение данных транзакций в переменную состояния
@@ -62,14 +62,15 @@ const Transactions = ({page, setPage}) => {
               <tr className='w-[50%] overflow-hidden text-neutral-400 ml-24'><td>FROM TOKEN</td></tr>
               <tr className='w-[50%] overflow-hidden text-neutral-400 ml-24'><td>TO TOKEN</td></tr>
               <tr className='w-[30%] overflow-hidden text-neutral-400 mx-24'><td>ACCOUNT</td></tr>
-              <tr className='w-[30%] overflow-hidden text-neutral-400 mr-12'><td></td></tr>
+              <tr className='w-[35%] overflow-hidden text-neutral-400 mr-12'><td></td></tr>
               </thead>
 
 
-              {transactionHistory?.reverse().map((transaction, index) => (
+              {transactionHistory?.map((transaction, index) => (
                 <TransactionMapping key={index} transaction={transaction}/>
               )
               )}
+
 
             </table>
             

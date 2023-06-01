@@ -10,7 +10,6 @@ import { Exchange, Loader, WalletButton } from "../components";
 const App = ({setPage}) => {
   const { account } = useEthers();
   const [loading, pools] = usePools();
-  const poolsLoading = false;
   const [scrollShadow, setScrollShadow] = useState(false);
 
   useEffect(() => {
@@ -31,7 +30,7 @@ const App = ({setPage}) => {
   return (
     <div className={styles.app}>
       <div className="flex bg-green-400 h-screen w-fit rounded-l-2xl fixed z-30">
-        <img className="z-30 my-auto w-auto h-[62%]" src={leftSideBackground} />
+        <img alt='bgrnd' className="z-30 my-auto w-auto h-[62%]" src={leftSideBackground} />
       </div>
       <div className={styles.mainContainer}>
 

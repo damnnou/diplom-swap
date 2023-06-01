@@ -18,7 +18,7 @@ const styles = {
   scrolled: 'border-b border-neutral-700 shadow-sm shadow-[#1f1f1f]',
   transactionPage: 'h-[110%] flex flex-col justify-start mx-auto sm:mt-[80px] lg:mt-[100px] 2xl:mt-[150px] mb-0 lg:text-sm lg:w-[1050px] 2xl:w-[1100px]',
   tableHeader: 'h-14 items-center flex mt-6 p-4 border-neutral-700 bg-neutral-700 rounded-tl-xl rounded-tr-xl border-b border-neutral-500',
-  tableBody: 'h-20 items-center flex hover:bg-neutral-600 cursor-pointer justify-between last: px-4 py-6 border-b border-neutral-600 bg-neutral-700',
+  tableBody: 'h-20 items-center flex hover:bg-neutral-600 cursor-pointer justify-between last:rounded-bl-xl last:rounded-br-xl last:border-none px-4 py-6 border-b border-neutral-600 bg-neutral-700',
 
 };
 

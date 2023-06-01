@@ -16,6 +16,7 @@ const WalletButton = () => {
             setAccountAddress('')
         }
     })
+    
   return (
     <button 
     className={styles.walletButton}

@@ -1,4 +1,4 @@
-import React , {useState, useRef, useEffect} from 'react'
+import React , {useState, useEffect} from 'react'
 import styles from '../styles'
 import ethereumLogo from '../assets/wrapped-ether.png'
 import { useTokenBalance } from '@usedapp/core'
@@ -45,7 +45,7 @@ const ChooseToken = ({
       setShowList(false);
     }}
     >
-    <img src={ethereumLogo} className='w-6 h-6 my-auto mr-4'/>
+    <img alt='ethlogo' src={ethereumLogo} className='w-6 h-6 my-auto mr-4'/>
     <div className='flex flex-col'>
       <p className='font-semibold pb-1 mr-auto'>{tokenName}</p>
       <p className='text-neutral-400 text-base'>{symbol}</p>

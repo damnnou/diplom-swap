@@ -4,7 +4,7 @@ import {RiArrowLeftLine as Arrow} from 'react-icons/ri'
 import ethereumLogo from '../assets/wrapped-ether.png'
 import { useAmountsOut } from '../utils'
 import { formatUnits } from 'ethers/lib/utils'
-import {useState, useRef, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import Balance from './Balance'
 import ChooseToken from './ChooseToken'
 import {RiSearchLine} from 'react-icons/ri'
@@ -36,7 +36,7 @@ const AmountOut = ({
   return (
     <div className={styles.exchangeInputInside}>
       <button onClick={() => setShowList((prevState) => !prevState)} className='overflow-hidden hover:bg-neutral-600 mx-auto my-auto ml-1 flex px-6 py-4 text-xl text-white w-[51%] h-[92%] rounded-lg'>
-        <img src={ethereumLogo} className='w-6 h-6 my-auto mr-4'/>
+        <img alt='ethlogo' src={ethereumLogo} className='w-6 h-6 my-auto mr-4'/>
         <div className='flex flex-col'>
         <p className='font-semibold pb-1 mr-auto'>{activeCurrency}</p>
         <p className=' text-neutral-400 text-base overflow-hidden'><Balance tokenBalance={tokenBalance} /></p>

@@ -19,12 +19,10 @@ const Exchange = ({pools}) => {
   const [fromToken, setFromToken] = useState(pools[0].token0Address);
   const [toToken, setToToken] = useState('');
   const [resetState, setResetState] = useState(false);
-
   const fromValueBigNumber = parseUnits(fromValue);
   const availableTokens = getAvailableTokens(pools);
   const counterpartTokens = getCounterpartTokens(pools, fromToken);
-  const pairAddress = findPoolByTokens(pools, fromToken, toToken) ?.address ?? ""; 
-
+  const pairAddress = findPoolByTokens(pools, fromToken, toToken) ?.address ?? "";
   const routerContract = new Contract(ROUTER_ADDRESS, abis.router02);
   const fromTokenContract = new Contract(fromToken, ERC20.abi);
   const fromTokenBalance = useTokenBalance(fromToken,account);
@@ -167,7 +165,7 @@ const Exchange = ({pools}) => {
   return (
     <div className={styles.exchangeWindow}>
 
-      <div className='absolute flex flex-col xl:visible lg:right-[78%] lg:top-[42%] xl:top-[34%] xl:right-[75%] 2xl:right-[72%] lg:visible sm:invisible md:invisible'>
+      <div className='absolute flex flex-col xl:visible lg:right-[78%] lg:top-[35%] xl:top-[36%] 2xl:top-[30%] xl:right-[75%] 2xl:right-[72%] lg:visible sm:invisible md:invisible'>
         <p className='text-neutral-300 pb-6 pl-10'>Trending swaps</p>
         <button 
         onClick={() => {

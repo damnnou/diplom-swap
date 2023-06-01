@@ -57,15 +57,17 @@ const TransactionMapping = ({transaction}) => {
       }, [transaction.toToken]);
 
     return (
-    <a href={`https://goerli.etherscan.io/tx/${transaction.txHash}`} target='_blank'><tbody className={styles.tableBody}>
+    <tbody onClick={() => {
+      window.open(`https://goerli.etherscan.io/tx/${transaction.txHash}`);
+      }} className={styles.tableBody}>
     <tr className='w-[70%] overflow-hidden text-neutral-300 mr-0 font-semibold'><td>Swap {fromSymbol} to {toSymbol}</td></tr>
     <tr className='w-[30%] overflow-hidden text-neutral-400 ml-24'><td>{transaction.amount}</td></tr>
     <tr className='w-[50%] overflow-hidden text-neutral-400 ml-24'><td>{fromSymbol}</td></tr>
     <tr className='w-[50%] overflow-hidden text-neutral-400 ml-24'><td>{toSymbol}</td></tr>
     <tr className='w-[30%] overflow-hidden text-neutral-400 mx-24 text-white'><td>{shortenAddress(transaction.account)}</td></tr>
-    <tr className='w-[30%] overflow-hidden text-neutral-400 mr-12'><td>{formatTimeAgo(Math.floor((new Date() - new Date(transaction.timestamp)) / 1000))}</td></tr>
+    <tr className='w-[35%] overflow-hidden text-neutral-400 mr-12'><td>{formatTimeAgo(Math.floor((new Date() - new Date(transaction.timestamp)) / 1000))}</td></tr>
     </tbody>
-    </a>
+    
     )
 }
 
