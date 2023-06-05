@@ -4,6 +4,7 @@ import { DAppProvider } from "@usedapp/core";
 
 import App from "./pages/App";
 import Transactions from "./pages/Transactions";
+import HowItWorks from "./pages/HowItWorks"
 import { DAPP_CONFIG } from "./config";
 
 import "./index.css";
@@ -23,8 +24,8 @@ function Main() {
     <React.StrictMode>
       <DAppProvider config={DAPP_CONFIG}>
         {page === "App" && <App setPage={setPage} />}
-        {page === "Transactions" && <Transactions page={page} setPage={setPage} />}
-        {/* {page === "About" &&} */}
+        {page === "Transactions" && <Transactions setPage={setPage} />}
+        {page === "HowItWorks" && <HowItWorks setPage={setPage} />}
       </DAppProvider>
     </React.StrictMode>
   );

@@ -10,7 +10,7 @@ const styles = {
   exchangeWindow: 'h-[110%] flex flex-col justify-start mx-auto sm:mt-[80px] lg:mt-[100px] 2xl:mt-[150px] mb-0 lg:text-sm lg:w-[550px] 2xl:w-[600px] ',
   exchangeInput: 'flex w-full h-[120px] rounded-2xl bg-[#1f1f1f] overflow-hidden',
   exchangeInputInside: 'bg-neutral-700 w-[97.5%] h-[85%] rounded-lg overflow-hidden mx-auto my-auto border border-neutral-600  flex justify-between',
-  chooseTokenMenu: 'z-100 h-fit flex flex-col sm:left-[1%] md:left-[8%] md:top-[25%] lg:top-[20%] sm:top-1/4 py-6 2xl:px-96 sm:px-12 xl:px-64 lg:px-48 md:px-36 absolute sm:w-full md:w-[88%] min-h-[70%] bg-neutral-800 text-white rounded-lg',
+  chooseTokenMenu: 'z-100 h-fit flex flex-col sm:left-[1%] md:left-[8%] md:top-[25%] lg:top-[20%] 2xl:top-[15%] sm:top-1/4 py-6 2xl:px-96 sm:px-12 xl:px-64 lg:px-48 md:px-36 absolute sm:w-full md:w-[88%] min-h-[70%] bg-neutral-800 text-white rounded-lg',
   chooseTokenDiv: 'flex w-full h-fit bg-neutral-700 hover:bg-neutral-600 p-4 border-b last:border-none border-neutral-600 cursor-pointer',
   activeSwapButton: 'px-4 w-full h-full mt-6 h-[60px] bg-yellow-300 uppercase rounded-lg font-semibold',
   disabledSwapButton: 'px-4 w-full mt-6 h-[60px] bg-neutral-700 uppercase rounded-lg font-semibold',

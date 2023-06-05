@@ -9,7 +9,7 @@ import {client} from '../datebase/sanityClient';
 
 import TransactionMapping from "./TransactionMapping";
 
-const Transactions = ({page, setPage}) => {
+const Transactions = ({setPage}) => {
 
   const [transactionHistory, setTransactionHistory] = useState([]);
 
@@ -41,7 +41,7 @@ const Transactions = ({page, setPage}) => {
             <div className="flex my-auto">  
               <p onClick={() => setPage('App')} className='mx-8 text-neutral-400 hover:text-white  cursor-pointer'>Swap tokens</p>
               <p onClick={() => setPage('Transactions')} className='mx-8 text-white font-semibold hover:text-white cursor-pointer'>Transactions</p>
-              <p className='mx-8 text-neutral-400 hover:text-white cursor-pointer'>How it works</p>
+              <p onClick={() => setPage('HowItWorks')} className='mx-8 text-neutral-400 hover:text-white cursor-pointer'>How it works</p>
             </div>
           </div>
 

@@ -30,7 +30,7 @@ const App = ({setPage}) => {
   return (
     <div className={styles.app}>
       <div className="flex bg-green-400 h-screen w-fit rounded-l-2xl fixed z-30">
-        <img alt='bgrnd' className="z-30 my-auto w-auto h-[62%]" src={leftSideBackground} />
+        <img alt='bgrnd' className="z-30 my-auto w-auto h-[63%]" src={leftSideBackground} />
       </div>
       <div className={styles.mainContainer}>
 
@@ -44,7 +44,7 @@ const App = ({setPage}) => {
             <div className="flex my-auto">  
               <p onClick={() => setPage('App')} className='mx-8 text-neutral-400 text-white font-semibold cursor-pointer'>Swap tokens</p>
               <p onClick={() => setPage('Transactions')} className='mx-8 text-neutral-400 hover:text-white cursor-pointer'>Transactions</p>
-              <p className='mx-8 text-neutral-400 hover:text-white cursor-pointer'>How it works</p>
+              <p onClick={() => setPage('HowItWorks')} className='mx-8 text-neutral-400 hover:text-white cursor-pointer'>How it works</p>
             </div>
           </div>
 

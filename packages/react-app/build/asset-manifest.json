@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "./static/css/main.82f7fdd9.chunk.css",
+    "main.js": "./static/js/main.6aa1c7c2.chunk.js",
+    "main.js.map": "./static/js/main.6aa1c7c2.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.e8519242.js",
+    "runtime-main.js.map": "./static/js/runtime-main.e8519242.js.map",
+    "static/js/2.e4ce8920.chunk.js": "./static/js/2.e4ce8920.chunk.js",
+    "static/js/2.e4ce8920.chunk.js.map": "./static/js/2.e4ce8920.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.82f7fdd9.chunk.css.map": "./static/css/main.82f7fdd9.chunk.css.map",
+    "static/js/2.e4ce8920.chunk.js.LICENSE.txt": "./static/js/2.e4ce8920.chunk.js.LICENSE.txt",
+    "static/js/main.6aa1c7c2.chunk.js.LICENSE.txt": "./static/js/main.6aa1c7c2.chunk.js.LICENSE.txt",
+    "static/media/ethereumLogo.a1b9f99b.png": "./static/media/ethereumLogo.a1b9f99b.png",
+    "static/media/leftSideBackground.f9d814f1.png": "./static/media/leftSideBackground.f9d814f1.png",
+    "static/media/leftSideBackgroundHowItWorks.48269200.png": "./static/media/leftSideBackgroundHowItWorks.48269200.png",
+    "static/media/leftSideBackgroundTransactions.3ca57fd5.png": "./static/media/leftSideBackgroundTransactions.3ca57fd5.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e8519242.js",
+    "static/js/2.e4ce8920.chunk.js",
+    "static/css/main.82f7fdd9.chunk.css",
+    "static/js/main.6aa1c7c2.chunk.js"
+  ]
+}
