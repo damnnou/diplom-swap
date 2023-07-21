@@ -11,6 +11,24 @@ import TransactionMapping from "./TransactionMapping";
 
 const Transactions = ({setPage}) => {
 
+  const [scrollShadow, setScrollShadow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrollShadow(true);
+      } else {
+        setScrollShadow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const [transactionHistory, setTransactionHistory] = useState([]);
 
   useEffect(() => {
@@ -33,7 +51,9 @@ const Transactions = ({setPage}) => {
       </div>
       <div className={styles.mainContainer}>
 
-        <header className={styles.containerHeader}>
+      <header className={`${styles.containerHeader} ${
+            scrollShadow ? "transition border-opacity-1 border-b shadow-sm shadow-[0 1px 1px rgba(0,0,0,1)] duration-500 delay-100" : "transition border-opacity-0 border-b shadow-none duration-500 delay-100" 
+          }`}>
 
         <div className={styles.leftSideHeader}>
            <FcAreaChart onClick={() => setPage('App')} className='cursor-pointer w-12 h-12 mr-6' />

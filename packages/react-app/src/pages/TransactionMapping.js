@@ -11,16 +11,26 @@ const TransactionMapping = ({transaction}) => {
     const [toSymbol, setToSymbol] = useState('');
 
     const formatTimeAgo = (time) => {
-        if (time < 60) {
-          return `${time} sec ago`;
-        } else if (time < 3600) {
-          const minutes = Math.floor(time / 60);
-          return `${minutes} min ago`;
+      if (time < 60) {
+        return `${time} sec ago`;
+      } else if (time < 3600) {
+        const minutes = Math.floor(time / 60);
+        return `${minutes} min ago`;
+      } else if (time < 86400) {
+        const hours = Math.floor(time / 3600);
+        return `${hours} hr ago`;
+      } else if (time < 604800) {
+        const days = Math.floor(time / 86400);
+        if (days > 1) {
+          return `${days} days ago`;
         } else {
-          const hours = Math.floor(time / 3600);
-          return `${hours} hr ago`;
+          return `${days} day ago`;
         }
-      };
+      } else {
+        const weeks = Math.floor(time / 604800);
+        return `${weeks} week ago`;
+      }
+    };
 
       const getSymbolFromToken = async () => {
         const contractAddress = transaction.fromToken; // Адрес контракта токена
@@ -43,16 +53,16 @@ const TransactionMapping = ({transaction}) => {
           const symbol = await getSymbolFromToken();
           setFromSymbol(symbol);
         };
-    
+      
         fetchSymbol();
       }, [transaction.fromToken]);
-    
+      
       useEffect(() => {
         const fetchSymbol = async () => {
           const symbol = await getSymbolToToken();
           setToSymbol(symbol);
         };
-    
+      
         fetchSymbol();
       }, [transaction.toToken]);
 

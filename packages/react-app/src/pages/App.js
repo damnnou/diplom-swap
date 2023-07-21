@@ -35,11 +35,11 @@ const App = ({setPage}) => {
       <div className={styles.mainContainer}>
 
         <header className={`${styles.containerHeader} ${
-            scrollShadow ? "shadow-md" : ""
+            scrollShadow ? "transition border-opacity-1 border-b shadow-sm shadow-[0 1px 1px rgba(0,0,0,1)] duration-500 delay-100" : "transition border-opacity-0 border-b shadow-none duration-500 delay-100" 
           }`}>
 
           <div className={styles.leftSideHeader}>
-           <FcAreaChart onClick={() => setPage('App')} className='cursor-pointer w-12 h-12 mr-6' />
+           <FcAreaChart onClick={() => window.location.reload()} className='cursor-pointer w-12 h-12 mr-6' />
             
             <div className="flex my-auto">  
               <p onClick={() => setPage('App')} className='mx-8 text-neutral-400 text-white font-semibold cursor-pointer'>Swap tokens</p>

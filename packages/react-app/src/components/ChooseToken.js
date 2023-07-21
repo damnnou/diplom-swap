@@ -23,17 +23,17 @@ const ChooseToken = ({
     const [symbol, setSymbol] = useState('');
 
     useEffect(() => {
-        const getSymbol = async () => {
-            const web3 = new Web3('https://eth-goerli.g.alchemy.com/v2/HMHzefwZIJeG4VKqKaD7AjCltzcan0Zn');
-            const contractAddress = token; // Адрес контракта токена
-            const contractABI = abis.erc20.abi; // ABI контракта токена
-            const contract = new web3.eth.Contract(contractABI, contractAddress);
-            const symbol = await contract.methods.symbol().call();
-            setSymbol(symbol);
-          };
-      
-          getSymbol();
-        }, [searchValue]);
+      const getSymbol = async () => {
+          const web3 = new Web3('https://eth-goerli.g.alchemy.com/v2/HMHzefwZIJeG4VKqKaD7AjCltzcan0Zn');
+          const contractAddress = token; // Адрес контракта токена
+          const contractABI = abis.erc20.abi; // ABI контракта токена
+          const contract = new web3.eth.Contract(contractABI, contractAddress);
+          const symbol = await contract.methods.symbol().call();
+          setSymbol(symbol);
+      };
+  
+      getSymbol();
+  }, [searchValue, token]);
 
   return (
     <div  

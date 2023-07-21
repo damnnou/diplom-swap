@@ -19,10 +19,12 @@ const Exchange = ({pools}) => {
   const [fromToken, setFromToken] = useState(pools[0].token0Address);
   const [toToken, setToToken] = useState('');
   const [resetState, setResetState] = useState(false);
+
   const fromValueBigNumber = parseUnits(fromValue);
   const availableTokens = getAvailableTokens(pools);
   const counterpartTokens = getCounterpartTokens(pools, fromToken);
-  const pairAddress = findPoolByTokens(pools, fromToken, toToken) ?.address ?? "";
+  const pairAddress = findPoolByTokens(pools, fromToken, toToken)?.address ?? ""; 
+
   const routerContract = new Contract(ROUTER_ADDRESS, abis.router02);
   const fromTokenContract = new Contract(fromToken, ERC20.abi);
   const fromTokenBalance = useTokenBalance(fromToken,account);
@@ -120,13 +122,10 @@ const Exchange = ({pools}) => {
         toToken,
         fromValueBigNumber
       )
-      console.log('Transaction hash:', txHash)
-      console.log('Transaction:', transaction)
       setFromValue("0");
     })
     .catch(e => console.error(e));
 
-    console.log('successfully posted to DB')
   }
 
   const onFromValueChange = (value) => {
@@ -155,7 +154,6 @@ const Exchange = ({pools}) => {
       setTimeout(() => {
         setResetState(true);
         setFromValue("0");
-        setToToken('');
       }, 5000)
     }
 
@@ -165,40 +163,40 @@ const Exchange = ({pools}) => {
   return (
     <div className={styles.exchangeWindow}>
 
-      <div className='absolute flex flex-col xl:visible lg:right-[78%] lg:top-[35%] xl:top-[36%] 2xl:top-[30%] xl:right-[75%] 2xl:right-[72%] lg:visible sm:invisible md:invisible'>
-        <p className='text-neutral-300 pb-6 pl-10'>Trending swaps</p>
+      <div className='flex flex-col max-lg:invisible mt-28 mr-16'>
+        <p className='text-neutral-300 pb-6 pl-8'>Trending swaps</p>
         <button 
         onClick={() => {
           onFromTokenChange(tokenAddress.MGOTU)
           onToTokenChange(tokenAddress.RUB)
         }}
-        className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit focus:bg-neutral-600 border border-neutral-700 rounded-lg'>
+        className='ml-auto text-neutral-400 p-2 w-32 mb-4 h-fit focus:bg-[#494949] border border-neutral-700 rounded-lg'>
         MGOTU to RUB</button>
         <button 
         onClick={() => {
-          onFromTokenChange(tokenAddress.RUB)
-          onToTokenChange(tokenAddress.USD)
+          onFromTokenChange(tokenAddress.USD)
+          onToTokenChange(tokenAddress.RUB)
         }}
-        className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit focus:bg-neutral-600 border border-neutral-700 rounded-lg'>
-        RUB to USD</button>
+        className='ml-auto text-neutral-400 p-2 w-32 mb-4 h-fit focus:bg-[#494949] border border-neutral-700 rounded-lg'>
+        USD to RUB</button>
         <button 
         onClick={() => {
           onFromTokenChange(tokenAddress.DBDZ)
           onToTokenChange(tokenAddress.WETH)
         }}
-        className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit focus:bg-neutral-600 border border-neutral-700 rounded-lg'>
+        className='ml-auto text-neutral-400 p-2 w-32 mb-4 h-fit focus:bg-[#494949] border border-neutral-700 rounded-lg'>
         DBDZ to WETH</button>
         <button 
         onClick={() => {
           onFromTokenChange(tokenAddress.WETH)
           onToTokenChange(tokenAddress.MEOW)
         }}
-        className='ml-auto text-neutral-400 p-2 w-36 mb-4 h-fit focus:bg-neutral-600 border border-neutral-700 rounded-lg'>
+        className='ml-auto text-neutral-400 p-2 w-32 mb-4 h-fit focus:bg-[#494949] border border-neutral-700 rounded-lg'>
         WETH to MEOW</button>
       </div>
 
-    
-      <div className='flex flex-col mt-12'>
+      <div className='flex flex-col justify-start lg:w-[550px] 2xl:w-[600px]'>
+      <div className='flex flex-col mt-12 '>
       <p className='text-neutral-400 ml-4 mb-2'>From</p>
       <div className={styles.exchangeInput}>
 
@@ -225,7 +223,7 @@ const Exchange = ({pools}) => {
           onToTokenChange(fromToken)
           }
         }}
-        className='cursor-pointer mx-auto mb-0 mt-7 text-white h-6 w-6'/>
+        className='cursor-pointer mx-auto -mb-1 mt-5 text-white h-5 w-5'/>
       </div>
       <div className='flex flex-col'>
       <p className='text-neutral-400 ml-4 mb-2'>To</p>
@@ -269,7 +267,7 @@ const Exchange = ({pools}) => {
       ) : successMessage ? (
         <p className={styles.message}>{"Swap executed successfully!"}</p>
       ) : ""} 
-      
+      </div>
     </div>
   )
 }

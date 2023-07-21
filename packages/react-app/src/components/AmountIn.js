@@ -25,8 +25,8 @@ const AmountIn = ({account, value, onChange, currencyValue, onSelect, currencies
   
 
   return (
-    <div className={`${styles.exchangeInputInside}`}>
-      <button onClick={() => setShowList((prevState) => !prevState)} className='hover:bg-neutral-600 mx-auto my-auto ml-1 flex px-6 py-4 text-xl text-white w-[51%] h-[92%] rounded-lg'>
+    <div className={styles.exchangeInputInside}>
+      <button onClick={() => setShowList((prevState) => !prevState)} className='hover:bg-[#494949] mx-auto my-auto ml-1 flex px-6 py-3 text-lg text-white w-[51%] h-[92%] rounded-lg'>
         <img alt='ethlogo' src={ethereumLogo} className='w-6 h-6 my-auto mr-4'/>
         <div className='flex flex-col'>
         <p className='font-semibold pb-1 mr-auto'>{activeCurrency}</p>
@@ -44,10 +44,10 @@ const AmountIn = ({account, value, onChange, currencyValue, onSelect, currencies
             value={searchValue}
             onChange={input => setSearchValue(input.target.value)}
             placeholder='Asset name, unit name or asset id' 
-            className='relative outline-none bg-[#1f1f1f]  py-4 px-12 rounded-xl focus:bg-neutral-700 mb-6' />
-            <RiSearchLine className='w-5 h-5 text-neutral-400 absolute xl:left-[272px] 2xl:left-[400px] lg:left-[205px] md:left-[160px] sm:left-[62px] top-[173px]' />
+            className='relative outline-none bg-[#1f1f1f]  py-4 px-12 rounded-xl focus:bg-[#363636] mb-6' />
+            <RiSearchLine className='w-5 h-5 text-neutral-400 absolute xl:left-[36%] 2xl:left-[35.8%] lg:left-[36.5%] md:left-[36.5%] sm:left-[62px] lg:top-[288px] 2xl:top-[317px] max-lg:top-[280px]' />
 
-            <div className='rounded-lg border border-neutral-600 bg-neutral-700 hover:bg-neutral-600 mb-24'>
+            <div className='rounded-lg border border-[#494949] bg-[#363636] hover:bg-[#494949] mb-24'>
 
             {Object.entries(currencies).filter(([token,tokenName], index) => tokenName.toLowerCase().includes(searchValue.toLowerCase())).map(([token, tokenName], index) => 
             
@@ -75,7 +75,7 @@ const AmountIn = ({account, value, onChange, currencyValue, onSelect, currencies
       type='number' 
       style={{}} 
       placeholder='0.00' 
-      className='w-1/2 rounded-xl flex p-6 text-right text-3xl bg-neutral-700 text-white outline-none' />
+      className='w-1/2 rounded-xl flex p-6 text-right text-3xl bg-[#363636] text-white outline-none' />
     </div>
   )
 }
