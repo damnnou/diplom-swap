@@ -17,7 +17,7 @@ const Loader = ({title}) => {
           deactivate();
       }
   }} className={styles.swapWindow}>
-        <img className='mx-auto w-36 mt-auto' alt='eth logo' src={ethereumLogo} />
+        <img className='mx-auto w-36 mt-auto mb-12' alt='eth logo' src={ethereumLogo} />
         <p className='text-white uppercase my-auto mx-auto '>{title}</p>
     </div>
   )

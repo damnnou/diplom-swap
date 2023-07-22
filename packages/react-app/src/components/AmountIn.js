@@ -26,10 +26,10 @@ const AmountIn = ({account, value, onChange, currencyValue, onSelect, currencies
 
   return (
     <div className={styles.exchangeInputInside}>
-      <button onClick={() => setShowList((prevState) => !prevState)} className='hover:bg-[#494949] mx-auto my-auto ml-1 flex px-6 py-3 text-lg text-white w-[51%] h-[92%] rounded-lg'>
+      <button onClick={() => setShowList((prevState) => !prevState)} className='hover:bg-[#494949] mx-auto my-auto ml-1 flex px-6 py-3 text-lg text-white w-[51%] h-[92%] rounded-lg z-10'>
         <img alt='ethlogo' src={ethereumLogo} className='w-6 h-6 my-auto mr-4'/>
         <div className='flex flex-col'>
-        <p className='font-semibold pb-1 mr-auto'>{activeCurrency}</p>
+        <p className='font-semibold pb-1 mr-auto flex w-[210%] z-100'>{activeCurrency}</p>
         <p className='text-neutral-400 text-base'><Balance tokenBalance={tokenBalance} /></p>
         </div>
       </button>
@@ -39,13 +39,17 @@ const AmountIn = ({account, value, onChange, currencyValue, onSelect, currencies
          
           <div className='flex flex-col '>
             <p className='mb-6 font-semibold text-2xl'>SELECT AN ASSET</p>
-
-            <input
-            value={searchValue}
-            onChange={input => setSearchValue(input.target.value)}
-            placeholder='Asset name, unit name or asset id' 
-            className='relative outline-none bg-[#1f1f1f]  py-4 px-12 rounded-xl focus:bg-[#363636] mb-6' />
-            <RiSearchLine className='w-5 h-5 text-neutral-400 absolute xl:left-[36%] 2xl:left-[35.8%] lg:left-[36.5%] md:left-[36.5%] sm:left-[62px] lg:top-[288px] 2xl:top-[317px] max-lg:top-[280px]' />
+            <div className='flex w-full items-center mb-6 relative'>
+              <input
+                value={searchValue}
+                onChange={(input) => setSearchValue(input.target.value)}
+                placeholder='Asset name, unit name or asset id' 
+                className='outline-none bg-[#1f1f1f]  w-full py-4 px-12 rounded-xl focus:bg-[#363636]' 
+              />
+              <div className='absolute left-4 top-1/2 -translate-y-1/2'>
+                <RiSearchLine className='w-5 h-5 text-neutral-400' />
+              </div>
+            </div>
 
             <div className='rounded-lg border border-[#494949] bg-[#363636] hover:bg-[#494949] mb-24'>
 

@@ -4,6 +4,8 @@ import styles from '../styles'
 import leftSideBackgroundHowItWorks from '../assets/leftSideBackgroundHowItWorks.png'
 import {FcAreaChart} from 'react-icons/fc'
 import { WalletButton } from "../components";
+import {RiArrowUpDownFill} from 'react-icons/ri'
+import {RiDatabase2Line} from 'react-icons/ri'
 import {RiSettings2Line} from 'react-icons/ri';
 
 const HowItWorks = ({setPage}) => {
@@ -28,8 +30,8 @@ const HowItWorks = ({setPage}) => {
 
   return (
     <div className={styles.app}>
-      <div className="flex bg-purple-500 h-screen w-fit rounded-l-2xl fixed z-30">
-        <img alt="back" className="z-30 my-auto w-auto h-[73%]" width={30} src={leftSideBackgroundHowItWorks} />
+      <div className="flex bg-purple-500 h-full overflow-hidden max-md:hidden w-fit rounded-l-2xl fixed z-50">
+        <img alt='bgrnd' className="z-30 my-auto w-[30px] h-[400px] left-0" src={leftSideBackgroundHowItWorks} />
       </div>
       <div className={styles.mainContainer}>
 
@@ -37,13 +39,13 @@ const HowItWorks = ({setPage}) => {
             scrollShadow ? "transition border-opacity-1 border-b shadow-sm shadow-[0 1px 1px rgba(0,0,0,1)] duration-500 delay-100" : "transition border-opacity-0 border-b shadow-none duration-500 delay-100" 
           }`}>
 
-        <div className={styles.leftSideHeader}>
-           <FcAreaChart onClick={() => setPage('App')} className='cursor-pointer w-12 h-12 mr-6' />
+          <div className={styles.leftSideHeader}>
+           <FcAreaChart onClick={() => window.location.reload()} className='cursor-pointer w-12 h-12 mr-6 my-auto' />
             
-            <div className="flex my-auto">  
-              <p onClick={() => setPage('App')} className='mx-8 text-neutral-400 hover:text-white  cursor-pointer'>Swap tokens</p>
-              <p onClick={() => setPage('Transactions')} className='mx-8 text-neutral-400 font-semibold hover:text-white cursor-pointer'>Transactions</p>
-              <p onClick={() => setPage('HowItWorks')} className='mx-8 text-white hover:text-white cursor-pointer'>How it works</p>
+            <div className="flex my-auto max-md:w-0">  
+              <p onClick={() => setPage('App')} className='mx-8 text-neutral-400 cursor-pointer hover:text-white '>Swap tokens</p>
+              <p onClick={() => setPage('Transactions')} className='mx-8 text-neutral-400 hover:text-white cursor-pointer'>Transactions</p>
+              <p onClick={() => setPage('HowItWorks')} className='mx-8 text-white font-semibold e cursor-pointer'>How it works</p>
             </div>
           </div>
 
@@ -51,7 +53,7 @@ const HowItWorks = ({setPage}) => {
             <WalletButton />
           </div>
 
-        </header>
+        </header> 
 
         <div className={styles.containerBody}>
           <div className={styles.transactionPage}>
@@ -96,6 +98,12 @@ const HowItWorks = ({setPage}) => {
             </div>
           </div>
         </div>
+
+        <footer className={styles.containerFooter}>
+              <div onClick={() => setPage('App')} className='mx-6 text-neutral-400 hover:text-white  cursor-pointer'><RiArrowUpDownFill className='cursor-pointer mx-auto rotate-90 h-5 w-5 mb-1'/>Swap</div>
+              <div onClick={() => setPage('Transactions')} className='mx-6 text-neutral-400 hover:text-white cursor-pointer'><RiDatabase2Line className='cursor-pointer mx-auto h-5 w-5 mb-1'/>Transactions</div>
+              <div onClick={() => setPage('HowItWorks')} className='mx-6 text-white  cursor-pointer'><RiSettings2Line className='cursor-pointer mx-auto h-5 w-5 mb-1'/>How it</div>
+        </footer>
 
       </div>
     </div>

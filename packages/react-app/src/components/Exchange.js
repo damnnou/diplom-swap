@@ -71,12 +71,14 @@ const Exchange = ({pools}) => {
     account,
     fromToken,
     toToken,
-    amount
+    amount,
+    pairContract
   ) => {
     const txDoc = {
       _type: 'transactions',
       _id: txHash,
       account: account,
+      pairContract: pairContract,
       fromToken: fromToken,
       toToken: toToken,
       timestamp: new Date(Date.now()).toISOString(),
@@ -120,7 +122,8 @@ const Exchange = ({pools}) => {
         account,
         fromToken,
         toToken,
-        fromValueBigNumber
+        fromValueBigNumber,
+        pairAddress,
       )
       setFromValue("0");
     })
@@ -163,12 +166,12 @@ const Exchange = ({pools}) => {
   return (
     <div className={styles.exchangeWindow}>
 
-      <div className='flex flex-col max-lg:invisible mt-28 mr-16'>
+      <div className='flex flex-col max-lg:hidden mt-28 mr-16'>
         <p className='text-neutral-300 pb-6 pl-8'>Trending swaps</p>
         <button 
         onClick={() => {
-          onFromTokenChange(tokenAddress.MGOTU)
-          onToTokenChange(tokenAddress.RUB)
+          onFromTokenChange(tokenAddress.MGOTU);
+          onToTokenChange(tokenAddress.RUB);
         }}
         className='ml-auto text-neutral-400 p-2 w-32 mb-4 h-fit focus:bg-[#494949] border border-neutral-700 rounded-lg'>
         MGOTU to RUB</button>
@@ -223,7 +226,7 @@ const Exchange = ({pools}) => {
           onToTokenChange(fromToken)
           }
         }}
-        className='cursor-pointer mx-auto -mb-1 mt-5 text-white h-5 w-5'/>
+        className='cursor-pointer mx-auto -mb-1 mt-5 text-white h-[22px] w-[22px]'/>
       </div>
       <div className='flex flex-col'>
       <p className='text-neutral-400 ml-4 mb-2'>To</p>
