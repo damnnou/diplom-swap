@@ -19,6 +19,10 @@
 ### Ready to swap
 ![image](https://github.com/damnnou/diplom-swap/assets/126786693/74d14898-de58-4c08-8a74-757e9c9b6edf)
 
+### Responsive view
+![image](https://github.com/damnnou/diplom-swap/assets/126786693/9af80a48-846f-47a0-aa5c-ea459763c08f)
+
+
 # Transactions page
 ### Txs table
 ![image](https://github.com/damnnou/diplom-swap/assets/126786693/b1aea69d-0e33-4582-a4d8-58cb6213505e)
